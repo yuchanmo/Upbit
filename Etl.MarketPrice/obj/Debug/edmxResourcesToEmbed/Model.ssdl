@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoinStarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MarketList">
+    <Key>
+      <PropertyRef Name="market_id" />
+    </Key>
+    <Property Name="market_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="market" Type="varchar" MaxLength="50" />
+    <Property Name="korean_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="english_name" Type="varchar" MaxLength="100" />
+    <Property Name="regdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MarketPrice">
+    <Key>
+      <PropertyRef Name="price_id" />
+    </Key>
+    <Property Name="price_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="market" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="candle_date_time_utc" Type="datetime" Nullable="false" />
+    <Property Name="candle_date_time_kst" Type="datetime" Nullable="false" />
+    <Property Name="opening_price" Type="float" Nullable="false" />
+    <Property Name="high_price" Type="float" Nullable="false" />
+    <Property Name="low_price" Type="float" Nullable="false" />
+    <Property Name="trade_price" Type="float" Nullable="false" />
+    <Property Name="timestamp" Type="bigint" Nullable="false" />
+    <Property Name="candle_acc_trade_price" Type="float" Nullable="false" />
+    <Property Name="candle_acc_trade_volume" Type="float" Nullable="false" />
+    <Property Name="unit" Type="bigint" Nullable="false" />
+    <Property Name="regdate" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="PriceEtlLog">
+    <Key>
+      <PropertyRef Name="price_etl_log_id" />
+    </Key>
+    <Property Name="price_etl_log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="regdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Summary">
+    <Key>
+      <PropertyRef Name="summary_id" />
+    </Key>
+    <Property Name="summary_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="market" Type="varchar" MaxLength="50" />
+    <Property Name="candle_date_time_utc" Type="datetime" />
+    <Property Name="candle_date_time_kst" Type="datetime" />
+    <Property Name="opening_price" Type="float" />
+    <Property Name="high_price" Type="float" />
+    <Property Name="low_price" Type="float" />
+    <Property Name="trade_price" Type="float" />
+    <Property Name="timestamp" Type="bigint" />
+    <Property Name="candle_acc_trade_price" Type="float" />
+    <Property Name="candle_acc_trade_volume" Type="float" />
+    <Property Name="unit" Type="bigint" />
+    <Property Name="redcandle" Type="bit" />
+    <Property Name="avg_5" Type="float" />
+    <Property Name="avg_10" Type="float" />
+    <Property Name="avg_20" Type="float" />
+    <Property Name="volume_multiple" Type="float" />
+    <Property Name="price_multiple" Type="float" />
+    <Property Name="avg_5_coef" Type="float" />
+    <Property Name="avg_10_coef" Type="float" />
+    <Property Name="avg_20_coef" Type="float" />
+    <Property Name="posi_coef" Type="bit" />
+    <Property Name="correct_order_avg" Type="bit" />
+    <Property Name="cate" Type="varchar" MaxLength="50" />
+    <Property Name="regdate" Type="datetime" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="CoinStarModelStoreContainer">
+    <EntitySet Name="MarketList" EntityType="Self.MarketList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MarketPrice" EntityType="Self.MarketPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PriceEtlLog" EntityType="Self.PriceEtlLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Summary" EntityType="Self.Summary" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

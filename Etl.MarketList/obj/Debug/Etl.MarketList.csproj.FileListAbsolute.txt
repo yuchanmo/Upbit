@@ -1,0 +1,17 @@
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\Etl.MarketList.exe.config
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\Etl.MarketList.exe
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\Etl.MarketList.pdb
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\EntityFramework.dll
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\RestSharp.dll
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\EntityFramework.xml
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\RestSharp.xml
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\bin\Debug\ko\EntityFramework.resources.dll
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\obj\Debug\Etl.MarketList.csprojAssemblyReference.cache
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\obj\Debug\Etl.MarketList.csproj.CoreCompileInputs.cache
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\obj\Debug\Etl.MarketList.csproj.CopyComplete
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\obj\Debug\Etl.MarketList.exe
+D:\Programming\Upbit\Etl\EtlPrice\Etl.MarketList\obj\Debug\Etl.MarketList.pdb

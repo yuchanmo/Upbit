@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoinStarModelStoreContainer" CdmEntityContainer="CoinStarEntities">
+    <EntitySetMapping Name="MarketList">
+      <EntityTypeMapping TypeName="CoinStarModel.MarketList">
+        <MappingFragment StoreEntitySet="MarketList">
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="english_name" ColumnName="english_name" />
+          <ScalarProperty Name="korean_name" ColumnName="korean_name" />
+          <ScalarProperty Name="market" ColumnName="market" />
+          <ScalarProperty Name="market_id" ColumnName="market_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarketPrice">
+      <EntityTypeMapping TypeName="CoinStarModel.MarketPrice">
+        <MappingFragment StoreEntitySet="MarketPrice">
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="lowest_52_week_date" ColumnName="lowest_52_week_date" />
+          <ScalarProperty Name="lowest_52_week_price" ColumnName="lowest_52_week_price" />
+          <ScalarProperty Name="highest_52_week_date" ColumnName="highest_52_week_date" />
+          <ScalarProperty Name="highest_52_week_price" ColumnName="highest_52_week_price" />
+          <ScalarProperty Name="acc_trade_volume_24h" ColumnName="acc_trade_volume_24h" />
+          <ScalarProperty Name="acc_trade_volume" ColumnName="acc_trade_volume" />
+          <ScalarProperty Name="acc_trade_price_24h" ColumnName="acc_trade_price_24h" />
+          <ScalarProperty Name="acc_trade_price" ColumnName="acc_trade_price" />
+          <ScalarProperty Name="trade_volume" ColumnName="trade_volume" />
+          <ScalarProperty Name="signed_change_rate" ColumnName="signed_change_rate" />
+          <ScalarProperty Name="signed_change_price" ColumnName="signed_change_price" />
+          <ScalarProperty Name="change_rate" ColumnName="change_rate" />
+          <ScalarProperty Name="change_price" ColumnName="change_price" />
+          <ScalarProperty Name="change" ColumnName="change" />
+          <ScalarProperty Name="prev_closing_price" ColumnName="prev_closing_price" />
+          <ScalarProperty Name="trade_price" ColumnName="trade_price" />
+          <ScalarProperty Name="low_price" ColumnName="low_price" />
+          <ScalarProperty Name="high_price" ColumnName="high_price" />
+          <ScalarProperty Name="opening_price" ColumnName="opening_price" />
+          <ScalarProperty Name="trade_timestamp" ColumnName="trade_timestamp" />
+          <ScalarProperty Name="trade_time_kst" ColumnName="trade_time_kst" />
+          <ScalarProperty Name="trade_date_kst" ColumnName="trade_date_kst" />
+          <ScalarProperty Name="trade_time" ColumnName="trade_time" />
+          <ScalarProperty Name="trade_date" ColumnName="trade_date" />
+          <ScalarProperty Name="market" ColumnName="market" />
+          <ScalarProperty Name="market_price_id" ColumnName="market_price_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoinStarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CoinStarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MarketList" EntityType="CoinStarModel.MarketList" />
+    <EntitySet Name="PriceEtlLog" EntityType="CoinStarModel.PriceEtlLog" />
+    <EntitySet Name="MarketPrice" EntityType="CoinStarModel.MarketPrice" />
+    <EntitySet Name="Summary" EntityType="CoinStarModel.Summary" />
+  </EntityContainer>
+  <EntityType Name="MarketList">
+    <Key>
+      <PropertyRef Name="market_id" />
+    </Key>
+    <Property Name="market_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="market" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="korean_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="english_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="regdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PriceEtlLog">
+    <Key>
+      <PropertyRef Name="price_etl_log_id" />
+    </Key>
+    <Property Name="price_etl_log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regdate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="MarketPrice">
+    <Key>
+      <PropertyRef Name="price_id" />
+    </Key>
+    <Property Name="price_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="market" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="candle_date_time_utc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="candle_date_time_kst" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="opening_price" Type="Double" Nullable="false" />
+    <Property Name="high_price" Type="Double" Nullable="false" />
+    <Property Name="low_price" Type="Double" Nullable="false" />
+    <Property Name="trade_price" Type="Double" Nullable="false" />
+    <Property Name="timestamp" Type="Int64" Nullable="false" />
+    <Property Name="candle_acc_trade_price" Type="Double" Nullable="false" />
+    <Property Name="candle_acc_trade_volume" Type="Double" Nullable="false" />
+    <Property Name="unit" Type="Int64" Nullable="false" />
+    <Property Name="regdate" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Summary">
+    <Key>
+      <PropertyRef Name="summary_id" />
+    </Key>
+    <Property Name="summary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="market" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="candle_date_time_utc" Type="DateTime" Precision="3" />
+    <Property Name="candle_date_time_kst" Type="DateTime" Precision="3" />
+    <Property Name="opening_price" Type="Double" />
+    <Property Name="high_price" Type="Double" />
+    <Property Name="low_price" Type="Double" />
+    <Property Name="trade_price" Type="Double" />
+    <Property Name="timestamp" Type="Int64" />
+    <Property Name="candle_acc_trade_price" Type="Double" />
+    <Property Name="candle_acc_trade_volume" Type="Double" />
+    <Property Name="unit" Type="Int64" />
+    <Property Name="redcandle" Type="Boolean" />
+    <Property Name="avg_5" Type="Double" />
+    <Property Name="avg_10" Type="Double" />
+    <Property Name="avg_20" Type="Double" />
+    <Property Name="volume_multiple" Type="Double" />
+    <Property Name="price_multiple" Type="Double" />
+    <Property Name="avg_5_coef" Type="Double" />
+    <Property Name="avg_10_coef" Type="Double" />
+    <Property Name="avg_20_coef" Type="Double" />
+    <Property Name="posi_coef" Type="Boolean" />
+    <Property Name="correct_order_avg" Type="Boolean" />
+    <Property Name="cate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="regdate" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CoinStarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MarketList">
+          <Key>
+            <PropertyRef Name="market_id" />
+          </Key>
+          <Property Name="market_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="market" Type="varchar" MaxLength="50" />
+          <Property Name="korean_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="english_name" Type="varchar" MaxLength="100" />
+          <Property Name="regdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MarketPrice">
+          <Key>
+            <PropertyRef Name="price_id" />
+          </Key>
+          <Property Name="price_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="market" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="candle_date_time_utc" Type="datetime" Nullable="false" />
+          <Property Name="candle_date_time_kst" Type="datetime" Nullable="false" />
+          <Property Name="opening_price" Type="float" Nullable="false" />
+          <Property Name="high_price" Type="float" Nullable="false" />
+          <Property Name="low_price" Type="float" Nullable="false" />
+          <Property Name="trade_price" Type="float" Nullable="false" />
+          <Property Name="timestamp" Type="bigint" Nullable="false" />
+          <Property Name="candle_acc_trade_price" Type="float" Nullable="false" />
+          <Property Name="candle_acc_trade_volume" Type="float" Nullable="false" />
+          <Property Name="unit" Type="bigint" Nullable="false" />
+          <Property Name="regdate" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="PriceEtlLog">
+          <Key>
+            <PropertyRef Name="price_etl_log_id" />
+          </Key>
+          <Property Name="price_etl_log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="regdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Summary">
+          <Key>
+            <PropertyRef Name="summary_id" />
+          </Key>
+          <Property Name="summary_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="market" Type="varchar" MaxLength="50" />
+          <Property Name="candle_date_time_utc" Type="datetime" />
+          <Property Name="candle_date_time_kst" Type="datetime" />
+          <Property Name="opening_price" Type="float" />
+          <Property Name="high_price" Type="float" />
+          <Property Name="low_price" Type="float" />
+          <Property Name="trade_price" Type="float" />
+          <Property Name="timestamp" Type="bigint" />
+          <Property Name="candle_acc_trade_price" Type="float" />
+          <Property Name="candle_acc_trade_volume" Type="float" />
+          <Property Name="unit" Type="bigint" />
+          <Property Name="redcandle" Type="bit" />
+          <Property Name="avg_5" Type="float" />
+          <Property Name="avg_10" Type="float" />
+          <Property Name="avg_20" Type="float" />
+          <Property Name="volume_multiple" Type="float" />
+          <Property Name="price_multiple" Type="float" />
+          <Property Name="avg_5_coef" Type="float" />
+          <Property Name="avg_10_coef" Type="float" />
+          <Property Name="avg_20_coef" Type="float" />
+          <Property Name="posi_coef" Type="bit" />
+          <Property Name="correct_order_avg" Type="bit" />
+          <Property Name="cate" Type="varchar" MaxLength="50" />
+          <Property Name="regdate" Type="datetime" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityContainer Name="CoinStarModelStoreContainer">
+          <EntitySet Name="MarketList" EntityType="Self.MarketList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MarketPrice" EntityType="Self.MarketPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PriceEtlLog" EntityType="Self.PriceEtlLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Summary" EntityType="Self.Summary" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CoinStarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CoinStarEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MarketList" EntityType="CoinStarModel.MarketList" />
+          <EntitySet Name="PriceEtlLog" EntityType="CoinStarModel.PriceEtlLog" />
+          <EntitySet Name="MarketPrice" EntityType="CoinStarModel.MarketPrice" />
+          <EntitySet Name="Summary" EntityType="CoinStarModel.Summary" />
+        </EntityContainer>
+        <EntityType Name="MarketList">
+          <Key>
+            <PropertyRef Name="market_id" />
+          </Key>
+          <Property Name="market_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="market" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="korean_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="english_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="regdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PriceEtlLog">
+          <Key>
+            <PropertyRef Name="price_etl_log_id" />
+          </Key>
+          <Property Name="price_etl_log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="regdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="MarketPrice">
+          <Key>
+            <PropertyRef Name="price_id" />
+          </Key>
+          <Property Name="price_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="market" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="candle_date_time_utc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="candle_date_time_kst" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="opening_price" Type="Double" Nullable="false" />
+          <Property Name="high_price" Type="Double" Nullable="false" />
+          <Property Name="low_price" Type="Double" Nullable="false" />
+          <Property Name="trade_price" Type="Double" Nullable="false" />
+          <Property Name="timestamp" Type="Int64" Nullable="false" />
+          <Property Name="candle_acc_trade_price" Type="Double" Nullable="false" />
+          <Property Name="candle_acc_trade_volume" Type="Double" Nullable="false" />
+          <Property Name="unit" Type="Int64" Nullable="false" />
+          <Property Name="regdate" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Summary">
+          <Key>
+            <PropertyRef Name="summary_id" />
+          </Key>
+          <Property Name="summary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="market" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="candle_date_time_utc" Type="DateTime" Precision="3" />
+          <Property Name="candle_date_time_kst" Type="DateTime" Precision="3" />
+          <Property Name="opening_price" Type="Double" />
+          <Property Name="high_price" Type="Double" />
+          <Property Name="low_price" Type="Double" />
+          <Property Name="trade_price" Type="Double" />
+          <Property Name="timestamp" Type="Int64" />
+          <Property Name="candle_acc_trade_price" Type="Double" />
+          <Property Name="candle_acc_trade_volume" Type="Double" />
+          <Property Name="unit" Type="Int64" />
+          <Property Name="redcandle" Type="Boolean" />
+          <Property Name="avg_5" Type="Double" />
+          <Property Name="avg_10" Type="Double" />
+          <Property Name="avg_20" Type="Double" />
+          <Property Name="volume_multiple" Type="Double" />
+          <Property Name="price_multiple" Type="Double" />
+          <Property Name="avg_5_coef" Type="Double" />
+          <Property Name="avg_10_coef" Type="Double" />
+          <Property Name="avg_20_coef" Type="Double" />
+          <Property Name="posi_coef" Type="Boolean" />
+          <Property Name="correct_order_avg" Type="Boolean" />
+          <Property Name="cate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="regdate" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CoinStarModelStoreContainer" CdmEntityContainer="CoinStarEntities">
+          <EntitySetMapping Name="MarketList">
+            <EntityTypeMapping TypeName="CoinStarModel.MarketList">
+              <MappingFragment StoreEntitySet="MarketList">
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+                <ScalarProperty Name="english_name" ColumnName="english_name" />
+                <ScalarProperty Name="korean_name" ColumnName="korean_name" />
+                <ScalarProperty Name="market" ColumnName="market" />
+                <ScalarProperty Name="market_id" ColumnName="market_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceEtlLog">
+            <EntityTypeMapping TypeName="CoinStarModel.PriceEtlLog">
+              <MappingFragment StoreEntitySet="PriceEtlLog">
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+                <ScalarProperty Name="price_etl_log_id" ColumnName="price_etl_log_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarketPrice">
+            <EntityTypeMapping TypeName="CoinStarModel.MarketPrice">
+              <MappingFragment StoreEntitySet="MarketPrice">
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="candle_acc_trade_volume" ColumnName="candle_acc_trade_volume" />
+                <ScalarProperty Name="candle_acc_trade_price" ColumnName="candle_acc_trade_price" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="trade_price" ColumnName="trade_price" />
+                <ScalarProperty Name="low_price" ColumnName="low_price" />
+                <ScalarProperty Name="high_price" ColumnName="high_price" />
+                <ScalarProperty Name="opening_price" ColumnName="opening_price" />
+                <ScalarProperty Name="candle_date_time_kst" ColumnName="candle_date_time_kst" />
+                <ScalarProperty Name="candle_date_time_utc" ColumnName="candle_date_time_utc" />
+                <ScalarProperty Name="market" ColumnName="market" />
+                <ScalarProperty Name="price_id" ColumnName="price_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Summary">
+            <EntityTypeMapping TypeName="CoinStarModel.Summary">
+              <MappingFragment StoreEntitySet="Summary">
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+                <ScalarProperty Name="cate" ColumnName="cate" />
+                <ScalarProperty Name="correct_order_avg" ColumnName="correct_order_avg" />
+                <ScalarProperty Name="posi_coef" ColumnName="posi_coef" />
+                <ScalarProperty Name="avg_20_coef" ColumnName="avg_20_coef" />
+                <ScalarProperty Name="avg_10_coef" ColumnName="avg_10_coef" />
+                <ScalarProperty Name="avg_5_coef" ColumnName="avg_5_coef" />
+                <ScalarProperty Name="price_multiple" ColumnName="price_multiple" />
+                <ScalarProperty Name="volume_multiple" ColumnName="volume_multiple" />
+                <ScalarProperty Name="avg_20" ColumnName="avg_20" />
+                <ScalarProperty Name="avg_10" ColumnName="avg_10" />
+                <ScalarProperty Name="avg_5" ColumnName="avg_5" />
+                <ScalarProperty Name="redcandle" ColumnName="redcandle" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="candle_acc_trade_volume" ColumnName="candle_acc_trade_volume" />
+                <ScalarProperty Name="candle_acc_trade_price" ColumnName="candle_acc_trade_price" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="trade_price" ColumnName="trade_price" />
+                <ScalarProperty Name="low_price" ColumnName="low_price" />
+                <ScalarProperty Name="high_price" ColumnName="high_price" />
+                <ScalarProperty Name="opening_price" ColumnName="opening_price" />
+                <ScalarProperty Name="candle_date_time_kst" ColumnName="candle_date_time_kst" />
+                <ScalarProperty Name="candle_date_time_utc" ColumnName="candle_date_time_utc" />
+                <ScalarProperty Name="market" ColumnName="market" />
+                <ScalarProperty Name="summary_id" ColumnName="summary_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

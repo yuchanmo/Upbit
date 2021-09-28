@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoinStarModelStoreContainer" CdmEntityContainer="CoinStarEntities">
+    <EntitySetMapping Name="MarketList">
+      <EntityTypeMapping TypeName="CoinStarModel.MarketList">
+        <MappingFragment StoreEntitySet="MarketList">
+          <ScalarProperty Name="market_id" ColumnName="market_id" />
+          <ScalarProperty Name="market" ColumnName="market" />
+          <ScalarProperty Name="korean_name" ColumnName="korean_name" />
+          <ScalarProperty Name="english_name" ColumnName="english_name" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

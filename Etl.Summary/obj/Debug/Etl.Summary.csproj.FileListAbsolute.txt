@@ -1,0 +1,7 @@
+D:\Programming\Upbit\Etl\EtlPrice\Etl.Summary\bin\Debug\Etl.Summary.exe.config
+D:\Programming\Upbit\Etl\EtlPrice\Etl.Summary\bin\Debug\Etl.Summary.exe
+D:\Programming\Upbit\Etl\EtlPrice\Etl.Summary\bin\Debug\Etl.Summary.pdb
+D:\Programming\Upbit\Etl\EtlPrice\Etl.Summary\obj\Debug\Etl.Summary.csprojAssemblyReference.cache
+D:\Programming\Upbit\Etl\EtlPrice\Etl.Summary\obj\Debug\Etl.Summary.csproj.CoreCompileInputs.cache
+D:\Programming\Upbit\Etl\EtlPrice\Etl.Summary\obj\Debug\Etl.Summary.exe
+D:\Programming\Upbit\Etl\EtlPrice\Etl.Summary\obj\Debug\Etl.Summary.pdb

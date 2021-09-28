@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoinStarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CoinStarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MarketList" EntityType="CoinStarModel.MarketList" />
+    <EntitySet Name="MarketPrice" EntityType="CoinStarModel.MarketPrice" />
+  </EntityContainer>
+  <EntityType Name="MarketList">
+    <Key>
+      <PropertyRef Name="market_id" />
+    </Key>
+    <Property Name="market_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="market" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="korean_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="english_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="regdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MarketPrice">
+    <Key>
+      <PropertyRef Name="market_price_id" />
+    </Key>
+    <Property Name="market_price_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="market" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trade_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="trade_time" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="trade_date_kst" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="trade_time_kst" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="trade_timestamp" Type="Int64" />
+    <Property Name="opening_price" Type="Double" />
+    <Property Name="high_price" Type="Double" />
+    <Property Name="low_price" Type="Double" />
+    <Property Name="trade_price" Type="Double" />
+    <Property Name="prev_closing_price" Type="Double" />
+    <Property Name="change" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="change_price" Type="Double" />
+    <Property Name="change_rate" Type="Double" />
+    <Property Name="signed_change_price" Type="Double" />
+    <Property Name="signed_change_rate" Type="Double" />
+    <Property Name="trade_volume" Type="Double" />
+    <Property Name="acc_trade_price" Type="Double" />
+    <Property Name="acc_trade_price_24h" Type="Double" />
+    <Property Name="acc_trade_volume" Type="Double" Nullable="false" />
+    <Property Name="acc_trade_volume_24h" Type="Double" />
+    <Property Name="highest_52_week_price" Type="Double" />
+    <Property Name="highest_52_week_date" Type="DateTime" Precision="0" />
+    <Property Name="lowest_52_week_price" Type="Double" />
+    <Property Name="lowest_52_week_date" Type="DateTime" Precision="0" />
+    <Property Name="timestamp" Type="Int64" />
+    <Property Name="regdate" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

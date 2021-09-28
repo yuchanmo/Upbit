@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoinStarModelStoreContainer" CdmEntityContainer="CoinStarEntities">
+    <EntitySetMapping Name="MarketList">
+      <EntityTypeMapping TypeName="CoinStarModel.MarketList">
+        <MappingFragment StoreEntitySet="MarketList">
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="english_name" ColumnName="english_name" />
+          <ScalarProperty Name="korean_name" ColumnName="korean_name" />
+          <ScalarProperty Name="market" ColumnName="market" />
+          <ScalarProperty Name="market_id" ColumnName="market_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceEtlLog">
+      <EntityTypeMapping TypeName="CoinStarModel.PriceEtlLog">
+        <MappingFragment StoreEntitySet="PriceEtlLog">
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="price_etl_log_id" ColumnName="price_etl_log_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarketPrice">
+      <EntityTypeMapping TypeName="CoinStarModel.MarketPrice">
+        <MappingFragment StoreEntitySet="MarketPrice">
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="candle_acc_trade_volume" ColumnName="candle_acc_trade_volume" />
+          <ScalarProperty Name="candle_acc_trade_price" ColumnName="candle_acc_trade_price" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="trade_price" ColumnName="trade_price" />
+          <ScalarProperty Name="low_price" ColumnName="low_price" />
+          <ScalarProperty Name="high_price" ColumnName="high_price" />
+          <ScalarProperty Name="opening_price" ColumnName="opening_price" />
+          <ScalarProperty Name="candle_date_time_kst" ColumnName="candle_date_time_kst" />
+          <ScalarProperty Name="candle_date_time_utc" ColumnName="candle_date_time_utc" />
+          <ScalarProperty Name="market" ColumnName="market" />
+          <ScalarProperty Name="price_id" ColumnName="price_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Summary">
+      <EntityTypeMapping TypeName="CoinStarModel.Summary">
+        <MappingFragment StoreEntitySet="Summary">
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="cate" ColumnName="cate" />
+          <ScalarProperty Name="correct_order_avg" ColumnName="correct_order_avg" />
+          <ScalarProperty Name="posi_coef" ColumnName="posi_coef" />
+          <ScalarProperty Name="avg_20_coef" ColumnName="avg_20_coef" />
+          <ScalarProperty Name="avg_10_coef" ColumnName="avg_10_coef" />
+          <ScalarProperty Name="avg_5_coef" ColumnName="avg_5_coef" />
+          <ScalarProperty Name="price_multiple" ColumnName="price_multiple" />
+          <ScalarProperty Name="volume_multiple" ColumnName="volume_multiple" />
+          <ScalarProperty Name="avg_20" ColumnName="avg_20" />
+          <ScalarProperty Name="avg_10" ColumnName="avg_10" />
+          <ScalarProperty Name="avg_5" ColumnName="avg_5" />
+          <ScalarProperty Name="redcandle" ColumnName="redcandle" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="candle_acc_trade_volume" ColumnName="candle_acc_trade_volume" />
+          <ScalarProperty Name="candle_acc_trade_price" ColumnName="candle_acc_trade_price" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="trade_price" ColumnName="trade_price" />
+          <ScalarProperty Name="low_price" ColumnName="low_price" />
+          <ScalarProperty Name="high_price" ColumnName="high_price" />
+          <ScalarProperty Name="opening_price" ColumnName="opening_price" />
+          <ScalarProperty Name="candle_date_time_kst" ColumnName="candle_date_time_kst" />
+          <ScalarProperty Name="candle_date_time_utc" ColumnName="candle_date_time_utc" />
+          <ScalarProperty Name="market" ColumnName="market" />
+          <ScalarProperty Name="summary_id" ColumnName="summary_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
